@@ -4,10 +4,14 @@
 	padding: 0;
 	border: 0;
 	font-family: Arial, sans-serif;
+	color: var(--main-color);
 }
 
 :root {
+	--main-color: #3B1D00;
 	--main-secondary: #A6FF00;
+	--main-random: hotpink;
+	--main-random-two: rgb(255, 77, 0);
 	--main-font: "Instrument Serif";
 }
 
@@ -76,4 +80,32 @@ td, th {
   border: 1px solid #000000;
   text-align: left;
   padding: 8px;
+}
+
+.shape {
+	font-size: 24px;
+	text-align: center;
+	padding: 25px 25px;
+	border-radius: 100px;
+}
+
+.color-one {
+	background-color: var(--main-secondary);
+}
+
+.color-two {
+	background-color: var(--main-random);
+}
+
+.color-three {
+	background-color: var(--main-random-two);
+}
+
+footer {
+	background-color: var(--main-color);
+	width: 100vw;
+}
+
+footer p {
+	color: white;
 }
