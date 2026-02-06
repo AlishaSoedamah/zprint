@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: Arial, sans-serif;
+	font-family: Inter, sans-serif;
 	color: var(--main-color);
 }
 
@@ -27,7 +27,7 @@ h1 {
 	font-weight: 400;
   	font-style: normal;
 	font-size: 5em;
-	padding: 25px 0;
+	padding: 25px 0 25px 10px;
 }
 
 h2 {
@@ -38,12 +38,22 @@ h2 {
 	padding: 25px 0;
 }
 
+h3 {
+	font-family: var(--main-font);
+	font-weight: 400;
+  	font-style: normal;
+	font-size: 2em;
+	padding: 25px 0;
+}
+
 img {
 	width: 500px;
 	height: auto;
 }
 
 article {
+	border-radius: 10px;
+	outline: 1px solid var(--main-color);
 	display: flex;
 }
 
@@ -58,6 +68,7 @@ li {
 }
 
 mark {
+	margin: 25px 0 25px 10px;
 	text-transform: uppercase;
 	border-radius: 30px;
 	outline: 1px solid black;
@@ -65,40 +76,75 @@ mark {
 	background-color: var(--main-secondary);
 }
 
-section:nth-child(2) {
-	margin-left: 25px;
-}
-
 table {
 	text-transform: uppercase;
 	border-collapse: collapse;
-	padding: 20px 0;
-	display: flex;
+	margin: 70px 25px 10px 25px;
 }
 
 td, th {
-  border: 1px solid #000000;
-  text-align: left;
-  padding: 8px;
+	border: 1px solid #000000;
+	text-align: left;
+	padding: 10px 60px 10px 50px;
 }
 
-.shape {
-	font-size: 24px;
-	text-align: center;
-	padding: 25px 25px;
-	border-radius: 100px;
+div {
+	padding: 10px;
+	outline: 5px dashed hotpink;
+	border-radius: 10px;
+	background-color: var(--main-color);
+	width: 1200px;
+	height: 500px;
+	position: relative;
 }
 
-.color-one {
+div > ul > li:nth-child(1)
+{
+	top: 300px;
+	left: 60px;
+	transform: rotate(-20deg);
 	background-color: var(--main-secondary);
 }
 
-.color-two {
+div > ul > li:nth-child(2)
+{
+	animation-delay: 600ms;
+	top: 100px;
+	left: 500px;
+	transform: rotate(10deg);
 	background-color: var(--main-random);
 }
 
-.color-three {
+div > ul > li:nth-child(3)
+{
+	animation-delay: 1000ms;
+	top: 200px;
+	left: 700px;
+	transform: rotate(-30deg);
 	background-color: var(--main-random-two);
+}
+
+.img-grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 15px;
+}
+
+.img-grid > img{
+	width: 300px;
+	height: auto;
+}
+
+.shape {
+	position: absolute;
+	font-size: 40px;
+	text-align: center;
+	padding: 50px 50px;
+	border-radius: 100px;
+	animation-name: move;
+    animation-duration: 2000ms;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
 }
 
 footer {
@@ -108,4 +154,13 @@ footer {
 
 footer p {
 	color: white;
+}
+
+@keyframes move {
+  from {
+    top: 20%;
+  }
+  to {
+    top: 55%;
+  }
 }

@@ -3,3 +3,6 @@
 
 View transitions
 - startViewTransition
+
+## Kilian Valkhof
+- Gebruik minder sterke talen het meest
