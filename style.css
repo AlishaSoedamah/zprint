@@ -26,7 +26,7 @@ h1 {
 	font-family: var(--main-font);
 	font-weight: 400;
   	font-style: normal;
-	font-size: 5em;
+	font-size: 3em;
 	padding: 25px 0 25px 10px;
 }
 
@@ -47,14 +47,13 @@ h3 {
 }
 
 img {
-	width: 500px;
+	width: 300px;
 	height: auto;
 }
 
 article {
 	border-radius: 10px;
 	outline: 1px solid var(--main-color);
-	display: flex;
 }
 
 ul {
@@ -85,7 +84,6 @@ table {
 td, th {
 	border: 1px solid #000000;
 	text-align: left;
-	padding: 10px 60px 10px 50px;
 }
 
 div {
@@ -93,14 +91,14 @@ div {
 	outline: 5px dashed hotpink;
 	border-radius: 10px;
 	background-color: var(--main-color);
-	width: 1200px;
-	height: 500px;
+	width: 300px;
+	height: 200px;
 	position: relative;
 }
 
 div > ul > li:nth-child(1)
 {
-	top: 300px;
+	top: 30px;
 	left: 60px;
 	transform: rotate(-20deg);
 	background-color: var(--main-secondary);
@@ -109,8 +107,8 @@ div > ul > li:nth-child(1)
 div > ul > li:nth-child(2)
 {
 	animation-delay: 600ms;
-	top: 100px;
-	left: 500px;
+	top: 10px;
+	left: 50px;
 	transform: rotate(10deg);
 	background-color: var(--main-random);
 }
@@ -118,28 +116,25 @@ div > ul > li:nth-child(2)
 div > ul > li:nth-child(3)
 {
 	animation-delay: 1000ms;
-	top: 200px;
-	left: 700px;
+	top: 20px;
+	left: 70px;
 	transform: rotate(-30deg);
 	background-color: var(--main-random-two);
 }
 
 .img-grid {
-	display: grid;
-	grid-template-columns: auto auto auto;
-	grid-gap: 15px;
+	margin: 0 auto;
 }
 
 .img-grid > img{
-	width: 300px;
+	min-width: 300px;
 	height: auto;
 }
 
 .shape {
 	position: absolute;
-	font-size: 40px;
+	font-size: 15px;
 	text-align: center;
-	padding: 50px 50px;
 	border-radius: 100px;
 	animation-name: move;
     animation-duration: 2000ms;
@@ -163,4 +158,86 @@ footer p {
   to {
     top: 55%;
   }
+}
+
+@media (min-width: 500px) {
+	h1 {
+	font-size: 5em;
+	}
+
+	img {
+		width: 400px;
+	}
+
+	article {
+		display: flex;
+	}
+
+	div {
+		width: 400px;
+		height: 300px;
+	}
+
+	.img-grid {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 15px;
+	}
+
+	div > ul > li:nth-child(1)
+	{
+		top: 300px;
+		left: 60px;
+	}
+
+	div > ul > li:nth-child(2)
+	{
+		animation-delay: 600ms;
+		top: 100px;
+		left: 500px;
+	}
+
+	div > ul > li:nth-child(3)
+	{
+		animation-delay: 1000ms;
+		top: 200px;
+		left: 700px;
+	}
+
+	td, th {
+		padding: 10px 60px 10px 50px;
+	}
+}
+
+
+@media (min-width: 1000px) {
+	div {
+		width: 1000px;
+		height: 500px;
+	}
+
+	.shape {
+		font-size: 40px;
+		padding: 50px 50px;
+	}
+
+	div > ul > li:nth-child(1)
+	{
+		top: 300px;
+		left: 60px;
+	}
+
+	div > ul > li:nth-child(2)
+	{
+		animation-delay: 600ms;
+		top: 100px;
+		left: 500px;
+	}
+
+	div > ul > li:nth-child(3)
+	{
+		animation-delay: 1000ms;
+		top: 200px;
+		left: 700px;
+	}
 }
