@@ -6,3 +6,5 @@ View transitions
 
 ## Kilian Valkhof
 - Gebruik minder sterke talen het meest
+
+https://www.w3schools.com/howto/howto_css_display_element_hover.asp

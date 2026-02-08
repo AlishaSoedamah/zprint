@@ -5,16 +5,11 @@ async function fetchData() {
 	const url = 'https://fdnd.directus.app/items/person/280';
 	let response = await fetch(url);
 	let info = await response.json();
-	let charHtml =
-	`<h2>api content</h2>
-	<ul>
-		<li>${info.data.name}</li>
-		<li>${info.data.birthdate}</li>
-		<li>${info.data.github_handle}</li>
-		<li>${info.data.website}</li>
-	</ul>
-	`;
-	document.body.insertAdjacentHTML("beforeend", charHtml);
+	document.getElementById("name").innerHTML = "Full name • " + info.data.name;
+	document.getElementById("age").innerHTML = "DOB • " + info.data.birthdate;
+	document.getElementById("github").innerHTML = "Github handle • " + info.data.github_handle;
+	document.getElementById("website").innerHTML = "Website • " + info.data.website;
+
 }
 
 function changeTitle() {
