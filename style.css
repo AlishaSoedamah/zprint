@@ -8,7 +8,8 @@
 }
 
 :root {
-	--main-color: #3B1D00;
+	--background: #ffffff;
+	--main-color: #3b0000;
 	--main-secondary: #A6FF00;
 	--main-random: hotpink;
 	--main-random-two: rgb(255, 77, 0);
@@ -16,6 +17,7 @@
 }
 
 body {
+	background-color: var(--background);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -53,7 +55,7 @@ img {
 
 article {
 	border-radius: 10px;
-	outline: 1px solid var(--main-color);
+	outline: 2px solid var(--main-color);
 }
 
 ul {
@@ -62,31 +64,44 @@ ul {
 	list-style-type: none;
 }
 
-li {
-	padding: 10px 50px;
-}
-
 mark {
 	margin: 25px 0 25px 10px;
 	text-transform: uppercase;
 	border-radius: 30px;
-	outline: 1px solid black;
+	outline: 2px solid black;
 	padding: 8px 25px;
 	background-color: var(--main-secondary);
 }
 
 table {
+	margin: 40px 0;
+	width: 100%;
 	text-transform: uppercase;
 	border-collapse: collapse;
-	margin: 70px 25px 10px 25px;
 }
 
 td, th {
-	border: 1px solid #000000;
+	border-top: 2px solid #000000;
+	border-bottom: 2px solid #000000;
 	text-align: left;
+	padding: 10px 30px 10px 25px;
 }
 
-div {
+td:nth-child(1)
+{
+	border-right: 2px solid #000000;
+}
+
+#music
+{
+	background-color: var(--main-color);
+}
+
+#music > p {
+	color: var(--background);
+}
+
+#goals {
 	padding: 10px;
 	outline: 5px dashed hotpink;
 	border-radius: 10px;
@@ -96,7 +111,7 @@ div {
 	position: relative;
 }
 
-div > ul > li:nth-child(1)
+#goals > ul > li:nth-child(1)
 {
 	top: 30px;
 	left: 60px;
@@ -104,7 +119,7 @@ div > ul > li:nth-child(1)
 	background-color: var(--main-secondary);
 }
 
-div > ul > li:nth-child(2)
+#goals > ul > li:nth-child(2)
 {
 	animation-delay: 600ms;
 	top: 10px;
@@ -113,7 +128,7 @@ div > ul > li:nth-child(2)
 	background-color: var(--main-random);
 }
 
-div > ul > li:nth-child(3)
+#goals > ul > li:nth-child(3)
 {
 	animation-delay: 1000ms;
 	top: 20px;
@@ -122,17 +137,25 @@ div > ul > li:nth-child(3)
 	background-color: var(--main-random-two);
 }
 
+article > section > img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	object-position: top;
+}
+
 .img-grid {
+	display: grid;
 	margin: 0 auto;
 }
 
-.img-grid > img{
+.img-grid > img {
 	min-width: 300px;
-	height: auto;
 }
 
 .shape {
 	position: absolute;
+	padding: 10px;
 	font-size: 15px;
 	text-align: center;
 	border-radius: 100px;
@@ -167,37 +190,38 @@ footer p {
 
 	img {
 		width: 400px;
+		height: auto;
 	}
 
-	article {
-		display: flex;
-	}
-
-	div {
+	#goals {
 		width: 400px;
 		height: 300px;
 	}
 
+	article > section > img {
+		width: 100%;
+		height: auto;
+	}
+
 	.img-grid {
-		display: grid;
 		grid-template-columns: auto auto auto;
 		grid-gap: 15px;
 	}
 
-	div > ul > li:nth-child(1)
+	#goals > ul > li:nth-child(1)
 	{
 		top: 300px;
 		left: 60px;
 	}
 
-	div > ul > li:nth-child(2)
+	#goals > ul > li:nth-child(2)
 	{
 		animation-delay: 600ms;
 		top: 100px;
 		left: 500px;
 	}
 
-	div > ul > li:nth-child(3)
+	#goals > ul > li:nth-child(3)
 	{
 		animation-delay: 1000ms;
 		top: 200px;
@@ -210,8 +234,13 @@ footer p {
 }
 
 
-@media (min-width: 1000px) {
-	div {
+@media (min-width: 850px) {
+	article {
+		display: flex;
+		margin: 50px 0;
+	}
+
+	#goals {
 		width: 1000px;
 		height: 500px;
 	}
@@ -221,23 +250,20 @@ footer p {
 		padding: 50px 50px;
 	}
 
-	div > ul > li:nth-child(1)
+	#goals > ul > li:nth-child(1)
 	{
-		top: 300px;
 		left: 60px;
 	}
 
-	div > ul > li:nth-child(2)
+	#goals > ul > li:nth-child(2)
 	{
 		animation-delay: 600ms;
-		top: 100px;
 		left: 500px;
 	}
 
-	div > ul > li:nth-child(3)
+	#goals > ul > li:nth-child(3)
 	{
 		animation-delay: 1000ms;
-		top: 200px;
-		left: 700px;
+		left: 750px;
 	}
 }
