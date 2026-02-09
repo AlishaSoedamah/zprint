@@ -16,6 +16,37 @@
 	--main-font: "Instrument Serif";
 }
 
+/* bron: sanne t hooft */
+:root:has([value="🌙"]:checked) {
+	--theme:🌙;
+	--background: #002d00;
+	--main-color: hsl(295, 100%, 89%);
+	--main-secondary: #00663c;
+	--main-random: #003c2a;
+	--main-random-two: rgb(0, 168, 109);
+}
+
+:root:has([value="😜"]:checked) {
+	--theme:😜;
+	--background: hotpink;
+	--main-color: #0037ff;
+	--main-secondary: #00ff95;
+	--main-random: #ffe100;
+	--background: url("img/xp.webp");
+	--main-font: 'comicsansms';
+}
+
+@container style(--theme:😜) {
+
+	body {
+		background-image: var(--background);
+		color: var(--main-secondary);
+	}
+	h1 {
+		font-size: 3em;
+	}
+}
+
 body {
 	background-color: var(--background);
 	display: flex;
@@ -69,7 +100,7 @@ mark {
 	margin: 25px 0 25px 10px;
 	text-transform: uppercase;
 	border-radius: 30px;
-	outline: 1px solid black;
+	outline: 1px solid var(--main-color);
 	padding: 8px 25px;
 	background-color: var(--main-secondary);
 }
@@ -82,15 +113,15 @@ table {
 }
 
 td, th {
-	border-top: 1px solid #000000;
-	border-bottom: 1px solid #000000;
+	border-top: 1px solid var(--main-color);
+	border-bottom: 1px solid var(--main-color);
 	text-align: left;
 	padding: 10px 15px;
 }
 
 td:nth-child(1)
 {
-	border-right: 1px solid #000000;
+	border-right: 1px solid var(--main-color);
 	width: 25%;
 }
 
@@ -101,7 +132,7 @@ figure {
 	background-color: var(--main-color);
 	padding: 25px;
 	border-radius: 10px;
-	margin: 10px;
+	margin-top: 10px;
 }
 
 .special {
@@ -109,6 +140,14 @@ figure {
 	font-family: var(--main-font);
 	transition: opacity .55s ease-in-out;
 
+}
+
+.img-grid
+{
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
 }
 
 .img-grid:hover + .special {
@@ -135,6 +174,10 @@ figure {
 		animation-timing-function: ease-out;
 		animation-fill-mode: both;
 	}
+}
+
+#music-container {
+	padding: 0 20px;
 }
 
 #music
@@ -203,20 +246,6 @@ article > section > img {
 	object-position: top;
 }
 
-.img-grid {
-	display: grid;
-	margin: 0 auto;
-	width: 400px;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	width: 100vw;
-	img {
-		width: 300px;
-		height: 400px;
-		object-fit: cover;
-	}
-}
-
 .shape {
 	position: absolute;
 	padding: 10px;
@@ -230,6 +259,9 @@ article > section > img {
 }
 
 footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--main-color);
 	height: 100px;
 	width: 100vw;
@@ -321,7 +353,7 @@ footer {
 		height: 300px;
 		ul > li:nth-child(1)
 		{
-			left: 40px;
+			left: 15px;
 		}
 		ul > li:nth-child(2)
 		{
@@ -331,7 +363,7 @@ footer {
 		ul > li:nth-child(3)
 		{
 			animation-delay: 1000ms;
-			left: 200px;
+			left: 175px;
 		}
 	}
 
@@ -345,6 +377,22 @@ footer {
 	}
 }
 
+@media (min-width: 600px)
+{
+	.img-grid {
+		margin: 0 auto;
+		width: 400px;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		width: 100vw;
+		justify-content: space-around;
+		img {
+			width: 300px;
+			height: 400px;
+			object-fit: cover;
+		}
+	}
+}
 
 @media (min-width: 860px) {
 	article {
@@ -395,6 +443,11 @@ footer {
 			animation-delay: 1000ms;
 			left: 350px;
 		}
+	}
+
+	.img-grid {
+		width: 800px;
+		height: 490px;
 	}
 
 	.shape {
