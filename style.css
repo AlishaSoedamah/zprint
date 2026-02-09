@@ -28,22 +28,25 @@
 
 :root:has([value="😜"]:checked) {
 	--theme:😜;
-	--background: hotpink;
 	--main-color: #0037ff;
-	--main-secondary: #00ff95;
+	--main-secondary: #ff0000;
 	--main-random: #ffe100;
 	--background: url("img/xp.webp");
 	--main-font: 'comicsansms';
 }
 
 @container style(--theme:😜) {
+	* {
+		color: var(--main-secondary);
+	}
 
 	body {
 		background-image: var(--background);
-		color: var(--main-secondary);
 	}
-	h1 {
-		font-size: 3em;
+
+	mark, 
+	.shape {
+		color: var(--main-color);
 	}
 }
 
@@ -82,6 +85,19 @@ h3 {
 img {
 	width: 300px;
 	height: auto;
+}
+
+header {
+	position: sticky;
+	top: 20px;
+	background: var(--background);
+	z-index: 2;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+select {
+	background: none;
 }
 
 article {

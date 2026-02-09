@@ -22,3 +22,16 @@ function changeTitle() {
 		}
 	});
 }
+
+// fetchEveryone();
+
+async function fetchEveryone()
+{
+	// const url = 'https://fdnd.directus.app/items';
+	// const url = 'https://fdnd.directus.app/items/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526';
+	const url = 'https://fdnd.directus.app/items/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_property][_nempty]';
+	let response = await fetch(url);
+	let info = await response.json();
+	let dePeople = info.data;
+	console.log(dePeople);
+}
