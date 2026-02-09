@@ -25,7 +25,7 @@ async function fetchData() {
 	let info = await response.json();
 	document.getElementById("name").innerHTML = "Full name • " + info.data.name;
 	document.getElementById("age").innerHTML = "DOB • " + info.data.birthdate;
-	document.getElementById("github").innerHTML = "Github handle • " + info.data.github_handle;
+	document.getElementById("github").innerHTML = "Github handle • " + `<a href="https://github.com/${info.data.github_handle}">${info.data.github_handle}</a>`;
 	document.getElementById("website").innerHTML = "Website • " + `<a href="${info.data.website}">${info.data.website}</a>`;
 }
 
