@@ -32,3 +32,4 @@ Werk opleveren
 Voor de hover over de film container: https://www.w3schools.com/howto/howto_css_display_element_hover.asp
 Animaties voor de imgs van de dieren: https://cydstumpel.github.io/minor-web-sprint-0/#/2
 Theme switch: https://codepen.io/shooft/pen/QwEBNVx
+https://medium.com/@ilearnbydoing/display-current-year-in-website-footer-e3f974a9dbc8
