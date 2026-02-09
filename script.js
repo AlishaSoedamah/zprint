@@ -1,5 +1,6 @@
 fetchData();
 changeTitle();
+// fetchEveryone();
 
 async function fetchData() {
 	const url = 'https://fdnd.directus.app/items/person/280';
@@ -23,15 +24,30 @@ function changeTitle() {
 	});
 }
 
-// fetchEveryone();
+let lijst = document.getElementById("apiPeople");
 
 async function fetchEveryone()
 {
 	// const url = 'https://fdnd.directus.app/items';
 	// const url = 'https://fdnd.directus.app/items/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526';
+	//HIER filter aanpassen
 	const url = 'https://fdnd.directus.app/items/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_property][_nempty]';
 	let response = await fetch(url);
 	let info = await response.json();
 	let dePeople = info.data;
-	console.log(dePeople);
+	dePeople.forEach(onePerson => 
+	{
+			// console.log(onePerson);
+			let oneHTML = 
+			`
+			<li>
+				${onePerson.name}
+			</li>
+			<li>
+			 	${onePerson.fav_property}
+			</li>
+			<img src="${onePerson.avatar}" alt="${onePerson.name}">
+			`;
+			lijst.insertAdjacentHTML('beforeend', oneHTML);
+	})
 }
