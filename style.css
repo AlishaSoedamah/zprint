@@ -35,6 +35,34 @@
 	--main-font: 'comicsansms';
 }
 
+:root:has([value="💫"]:checked) {
+	--theme: 💫;
+	--background: url("img/sparkle.gif");
+	--main-color: #ffffff;
+	--main-secondary: #4400ff;
+	--main-random: rgb(105, 255, 245);
+	--main-random-two: rgb(0, 255, 68);
+}
+
+@container style(--theme:💫)
+{
+	body {
+		background-image: var(--background);
+	}
+
+	figure > p {
+		color: var(--main-color);
+	}
+
+	#apiPeople > li > p,
+	figure,
+	footer,
+	#goals
+	{
+		background-color: transparent !important;
+	}
+}
+
 @container style(--theme:😜) {
 	* {
 		color: var(--main-secondary);
@@ -44,7 +72,7 @@
 		background-image: var(--background);
 	}
 
-	mark, 
+	mark,
 	.shape {
 		color: var(--main-color);
 	}
@@ -178,7 +206,7 @@ figure {
 	height: 100px;
 	text-align: center;
 	z-index: 1;
-	margin: -350px 40px;
+	margin: -290px 40px;
 }
 
 /* bron: cyd stumpel */
@@ -503,6 +531,7 @@ footer {
 			padding: 0;
 		}
 	}
+
 	#apiPeople {
 		grid-template-columns: auto auto auto;
 		gap: 10px;
