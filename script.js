@@ -9,11 +9,9 @@ async function fetchData() {
 	document.getElementById("age").innerHTML = "DOB • " + info.data.birthdate;
 	document.getElementById("github").innerHTML = "Github handle • " + info.data.github_handle;
 	document.getElementById("website").innerHTML = "Website • " + info.data.website;
-
 }
 
 function changeTitle() {
-
 	let originalTitle = document.title;
 	
 	document.addEventListener('visibilitychange', function() {

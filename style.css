@@ -126,6 +126,17 @@ figure {
 	margin: -350px 40px;
 }
 
+/* bron: cyd stumpel */
+#animals > section > img {
+	animation: clipIn 1s ease-out forwards;
+	&.scroll-driven {
+		animation-timeline: view();
+		animation-name: clipIn;
+		animation-timing-function: ease-out;
+		animation-fill-mode: both;
+	}
+}
+
 #music
 {
 	h4 {
@@ -199,7 +210,6 @@ article > section > img {
 	overflow-x: scroll;
 	overflow-y: hidden;
 	width: 100vw;
-
 	img {
 		width: 300px;
 		height: 400px;
@@ -221,6 +231,7 @@ article > section > img {
 
 footer {
 	background-color: var(--main-color);
+	height: 100px;
 	width: 100vw;
 	p {
 		color: var(--background);
@@ -233,6 +244,15 @@ footer {
   }
   to {
     top: 55%;
+  }
+}
+  
+@keyframes clipIn {
+  from {
+    clip-path: inset(10%);
+  }
+  to {
+    clip-path: inset(0);
   }
 }
 
