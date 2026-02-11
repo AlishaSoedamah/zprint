@@ -18,7 +18,7 @@ Workshop van Cyd over scroll animations en same page transitions
 
 9.2.26
 Extra eis, gewerkt aan een theme toevoegen en meer mensen fetchen uit de FDND api.
-deze keer hebben we een forEach gebruikt om over alle mensen heen te lopen.
+Deze keer hebben we een forEach gebruikt om over alle mensen heen te lopen.
 
 10.2.26
 Workshop Cyd layouts
