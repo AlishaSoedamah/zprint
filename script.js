@@ -57,6 +57,7 @@ async function fetchEveryone()
 {
 	const btns = document.querySelectorAll("button");
 
+	fetcher("/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal][_nempty]");
 	btns.forEach((btn) => {
 		btn.addEventListener("click", (e) => {
 			btns.forEach(btn => btn.classList.remove("on"));
