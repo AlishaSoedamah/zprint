@@ -1,4 +1,5 @@
 const base = 'https://fdnd.directus.app/items';
+
 fetchData();
 changeTitle();
 fetchEveryone();
@@ -12,11 +13,10 @@ function changeTitle() {
 	let originalTitle = document.title;
 	
 	document.addEventListener('visibilitychange', function() {
-		if (document.hidden) {
+		if (document.hidden)
 			document.title = "Kom terug!!!!!";
-		} else {
+		else
 			document.title = originalTitle;
-		}
 	});
 }
 
@@ -63,13 +63,9 @@ async function fetchEveryone()
 			btns.forEach(btn => btn.classList.remove("on"));
 			btn.classList.add("on");
 			if (btn.id == "alle")
-			{
 				fetcher("/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal][_nempty]");
-			}
 			else
-			{
 				fetcher(`/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal]=${btn.id}`);
-			}
 		});
 	});
 }
