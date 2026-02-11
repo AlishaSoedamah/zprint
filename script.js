@@ -1,3 +1,4 @@
+const base = 'https://fdnd.directus.app/items';
 fetchData();
 changeTitle();
 fetchEveryone();
@@ -20,25 +21,27 @@ function changeTitle() {
 }
 
 async function fetchData() {
-	const url = 'https://fdnd.directus.app/items/person/280';
+	const url = `${base}/person/280`;
 	let response = await fetch(url);
 	let info = await response.json();
-	document.getElementById("name").innerHTML = "Full name • " + info.data.name;
-	document.getElementById("age").innerHTML = "DOB • " + info.data.birthdate;
-	document.getElementById("github").innerHTML = "Github handle • " + `<a href="https://github.com/${info.data.github_handle}">${info.data.github_handle}</a>`;
-	document.getElementById("website").innerHTML = "Website • " + `<a href="${info.data.website}">${info.data.website}</a>`;
+
+	document.getElementById("name").innerHTML = `Full name • ${info.data.name}`;
+	document.getElementById("age").innerHTML = `DOB • ${info.data.birthdate}`;
+	document.getElementById("github").innerHTML = `Github handle • <a href="https://github.com/${info.data.github_handle}">${info.data.github_handle}</a>`;
+	document.getElementById("website").innerHTML = `Website • <a href="${info.data.website}">${info.data.website}</a>`;
 }
 
-async function fetchEveryone()
+async function fetcher(endpoint)
 {
+	const url = base + endpoint;
 	let lijst = document.getElementById("apiPeople");
-	const url = 'https://fdnd.directus.app/items/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal][_nempty]';
 	let response = await fetch(url);
 	let info = await response.json();
 	let dePeople = info.data;
+
+	lijst.innerHTML = "";
 	dePeople.forEach(onePerson => 
 	{
-		console.log(onePerson);
 		let oneHTML = 
 		`
 		<li>
@@ -48,4 +51,24 @@ async function fetchEveryone()
 		`;
 		lijst.insertAdjacentHTML('beforeend', oneHTML);
 	})
+}
+
+async function fetchEveryone()
+{
+	const btns = document.querySelectorAll("button");
+
+	btns.forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			btns.forEach(btn => btn.classList.remove("on"));
+			btn.classList.add("on");
+			if (btn.id == "alle")
+			{
+				fetcher("/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal][_nempty]");
+			}
+			else
+			{
+				fetcher(`/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal]=${btn.id}`);
+			}
+		});
+	});
 }

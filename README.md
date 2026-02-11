@@ -47,9 +47,6 @@ document.addEventListener("visibilitychange", function () {
 Extra eis, gewerkt aan een theme toevoegen en meer mensen fetchen uit de FDND api.
 Deze keer hebben we een forEach gebruikt om over alle mensen heen te lopen.
 
-10.2.26
-Workshop Cyd layouts
-
 11.2.26
 Code review -> laatste loodjes
 
@@ -70,6 +67,29 @@ Code review -> laatste loodjes
 ![goals minor](img/zindex.gif)
 z-index op de leerdoelen ziet er niet uit dus die heb ik weggehaald
 
+Filter 
+```
+
+async function fetchEveryone()
+{
+	const btns = document.querySelectorAll("button");
+
+	btns.forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			btns.forEach(btn => btn.classList.remove("on"));
+			btn.classList.add("on");
+			if (btn.id == "alle")
+			{
+				fetcher("/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal][_nempty]");
+			}
+			else
+			{
+				fetcher(`/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[fav_animal]=${btn.id}`);
+			}
+		});
+	});
+}
+```
 
 12.2.26
 Werk opleveren
@@ -81,3 +101,6 @@ Voor de hover over de film container: https://www.w3schools.com/howto/howto_css_
 Animaties voor de imgs van de dieren: https://cydstumpel.github.io/minor-web-sprint-0/#/2
 Theme switch: https://codepen.io/shooft/pen/QwEBNVx
 https://medium.com/@ilearnbydoing/display-current-year-in-website-footer-e3f974a9dbc8
+
+-- filter maken
+button: https://dev.to/nicm42/multiple-buttons-looking-like-theyre-staying-pressed-one-at-a-time-4bbb
