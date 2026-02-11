@@ -179,7 +179,7 @@ figure {
 	margin-top: 10px;
 }
 
-.special {
+.special-hover {
 	display: none;
 	font-family: var(--main-font);
 	transition: opacity .55s ease-in-out;
@@ -194,7 +194,7 @@ figure {
 	gap: 15px;
 }
 
-.img-grid:hover + .special {
+.img-grid:hover + .special-hover {
 	position: absolute;
 	display: block;
 	background-color: var(--main-secondary);
