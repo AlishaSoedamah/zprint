@@ -1,24 +1,7 @@
 const base = 'https://fdnd.directus.app/items';
 
 fetchData();
-changeTitle();
 fetchEveryone();
-
-document.addEventListener('DOMContentLoaded', function() {
- var currentYear = new Date().getFullYear();
- document.getElementById('currentYear').textContent = currentYear;
-});
-
-function changeTitle() {
-	let originalTitle = document.title;
-	
-	document.addEventListener('visibilitychange', function() {
-		if (document.hidden)
-			document.title = "Kom terug!!!!!";
-		else
-			document.title = originalTitle;
-	});
-}
 
 async function fetchData() {
 	const url = `${base}/person/280`;
@@ -45,7 +28,6 @@ async function fetcher(endpoint)
 		let oneHTML = 
 		`
 		<li>
-			<img class="profile" src="${onePerson.avatar}" alt="${onePerson.name}">
 			<p>${onePerson.name} • ${onePerson.fav_animal}</p>
 		</li>
 		`;

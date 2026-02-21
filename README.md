@@ -23,7 +23,7 @@ dag 1 - 3.2.26
 Kick-off en de opdracht van de minor
 
 dag 2 - 4.2.26
-Workshop van Cyd over scroll animations en same page transitions, weekly nerd van Kilian Valkhof. Verder animaties aan de foto grid toegevoegd en meer styling gedaan voor de site
+Workshop van Cyd over scr`oll animations en same page transitions, weekly nerd van Kilian Valkhof. Verder animaties aan de foto grid toegevoegd en meer styling gedaan voor de site
 
 ### Week 1
 Deze week heb ik:
@@ -114,6 +114,57 @@ async function fetchEveryone()
 ```
 ### Reflectie
 Ik heb geleerd hoe je data uit een api fetched en hoe je animaties kan vmaken die afspelen als je er langs scrolt. Wat ik niet eerder wist is dat je in css kan nesten, ik dacht dat je dit alleen maar in sass kon doen. Voor de rest was de code wel logisch en duidelijk. In JS was de scope van dingen soms wel verwarend maar met wat hulp is het wel gelukt om dit werkend te krijgen.
+
+### Resit
+
+Omdat er niet echt een samenhangend thema was in de eerste site heb ik besloten om de site om te gooien en in de 2.0 echt een geheel te maken van het ontwerp + mijn intresses zodat als iemand die op de site komt echt kan zien dat de site van mij is.
+
+#### Gedachte achter de site
+Mijn interesses die ik wil laten samen komen voor de 2.0 site: 
+- sterren
+- 3d 
+- sine waves (maar niet de wiskunde erachter)
+
+Sterren en 3D zijn beide super cool. Dus ik ga dit combineren in een site over mezelf.
+
+[Sterren](https://en.wikipedia.org/wiki/Star_cluster) kunnen in clusters vormen.
+Dus de theme switch is best vanzelf sprekend, er is een sterren cluster die je aan en uit kan toggen zodat de sterren stoppen met bewegen.
+
+
+3d code inspo: [voorbeeld van sanne](https://codepen.io/shooft/pen/RNRqrjM)
+
+dit stukje aangepast naar [dit] om de 3d animatie anders te maken (https://codepen.io/alishasoedamah/pen/EayBpja)
+
+```
+@keyframes draai {
+	0% {
+		transform:
+			rotateY(0turn)
+            // hier een rotateX
+			rotateX(1turn)
+			translateZ( calc(var(--size) * 1.3) )
+	}
+	100% {
+		transform:
+			rotateY(1turn)
+            // hier een rotateX
+			rotateX(0turn)
+			translateZ( calc(var(--size) * 1.3) )
+	}
+}
+```
+
+### Werk bespreken/feedback verwerken
+#### naam 1
+feedback
+ideeën
+
+#### 2
+feedback
+ideeën
+
+verbeteringen
+
 
 animation-timeline:
 [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline#:~:text=view%20progress%20timeline-,The%20animation%2Dtimeline%20property%20of%20the%20element%20to%20animate%20is,of%20its%20nearest%20parent%20scroller.&text=All%20animation%20timelines%20can%20be%20removed%20by%20selecting%20a%20value%20of%20none%20.)
