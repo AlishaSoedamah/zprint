@@ -117,7 +117,7 @@ Ik heb geleerd hoe je data uit een api fetched en hoe je animaties kan vmaken di
 
 ### Resit
 
-Omdat er niet echt een samenhangend thema was in de eerste site heb ik besloten om de site om te gooien en in de 2.0 echt een geheel te maken van het ontwerp + mijn intresses zodat als iemand die op de site komt echt kan zien dat de site van mij is.
+Omdat er niet echt een samenhangend thema was in de eerste site heb ik besloten om de site om te gooien en in de 2.0 echt een geheel te maken van het ontwerp + mijn interesses zodat iemand die op de site komt echt kan zien dat de site van mij is.
 
 #### Gedachte achter de site
 Mijn interesses die ik wil laten samen komen voor de 2.0 site: 
@@ -128,7 +128,7 @@ Mijn interesses die ik wil laten samen komen voor de 2.0 site:
 Sterren en 3D zijn beide super cool. Dus ik ga dit combineren in een site over mezelf.
 
 [Sterren](https://en.wikipedia.org/wiki/Star_cluster) kunnen in clusters vormen.
-Dus de theme switch is best vanzelf sprekend, er is een sterren cluster die je aan en uit kan toggen zodat de sterren stoppen met bewegen.
+Dus de theme switch is best vanzelfsprekend, er is een sterren cluster die je aan en uit kan toggelen zodat de sterren stoppen met bewegen.
 
 
 3d code inspo: [voorbeeld van sanne](https://codepen.io/shooft/pen/RNRqrjM)
